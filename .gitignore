@@ -1,3 +1,5 @@
 .idea
 venv
 client_secrets.json
+credentials.json
+calendar.ini

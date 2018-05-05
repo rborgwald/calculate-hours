@@ -1,0 +1,3 @@
+[google_calendar]
+url = https://www.googleapis.com/auth/calendar.readonly
+calendar_id = <work hours calendar id>
