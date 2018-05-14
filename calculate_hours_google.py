@@ -1,5 +1,8 @@
 #!/usr/bin/python
 
+# To set this script up, follow instructions at https://developers.google.com/calendar/quickstart/python
+# Also, you might need to run: pip3 install --upgrade google-api-python-client
+
 from __future__ import print_function
 from apiclient.discovery import build
 from httplib2 import Http
