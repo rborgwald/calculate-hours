@@ -52,17 +52,17 @@ def calculateHoursForDay(date, daysActions):
         return minutes
 
     # check if first action is a stop
-    if daysActions[0]['action'] == 'Stopped Working':
+    if daysActions[0]['action'] == 'You exited work':
         minutes += (daysActions[0]['timestamp'] - startOfDay) / datetime.timedelta(minutes=1)
     for a in daysActions:
-        if a['action'] == 'Started Working':
+        if a['action'] == 'You entered work':
             startWorkTime = a['timestamp']
-        elif a['action'] == 'Stopped Working' and startWorkTime != None:
+        elif a['action'] == 'You exited work' and startWorkTime != None:
             minutes += (a['timestamp'] - startWorkTime) / datetime.timedelta(minutes=1)
             startWorkTime = None
 
     # check if last action is a start
-    if daysActions[-1]['action'] == 'Started Working':
+    if daysActions[-1]['action'] == 'You entered work':
         endOfDay = getEndOfDayDateTime(date)
         minutes += (endOfDay - daysActions[-1]['timestamp']) / datetime.timedelta(minutes=1)
 
